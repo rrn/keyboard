@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RRN FN Keyboard Test Page</title>
+
+    <!-- Boilerplate Setup -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+      [data-behaviour="show-keyboard"] {
+        cursor: pointer;
+
+        font-size: 2em;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 2000;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
+    <!-- End Boilerplate Setup -->
+
+    <!-- Keyboard CSS and JS -->
+    <link rel="stylesheet" href="./css/keyboard.css">
+    <script src="./js/keyboard.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="page-header">RRN FN Keyboard Test Page</h1>
+      <form>
+        <div class="form-group">
+          <label for="exampleInput">Test Input</label>
+          <input type="text" class="form-control" id="exampleInput" placeholder="Test Input">
+        </div>
+        <div class="form-group">
+          <label for="exampleTextArea">Test Text Area</label>
+          <textarea class="form-control" id="exampleTextArea" placeholder="Test Text Area"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleCkEditor">Test CKEditor</label>
+          <textarea class="form-control" id="exampleCkEditor"></textarea>
+          <script>
+              CKEDITOR.replace('exampleCkEditor');
+          </script>
+        </div>
+      </form>
+    </div>
+
+    <!-- Include this span wherever you want a link that opens the keyboard -->
+    <span data-behaviour="show-keyboard" title="Click to open First Nations keyboard">⌨</span>
+  </body>
+</html>
