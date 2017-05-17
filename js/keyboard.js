@@ -63,8 +63,12 @@ $(function() {
         input.selectionEnd = selectionStart + character.length;
 
         $(input).trigger('input');
-      } else if (typeof CKEDITOR !== 'undefined') {
+      } else if (typeof CKEDITOR !== 'undefined' && typeof CKEDITOR.currentInstance !== 'undefined') {
         CKEDITOR.currentInstance.insertText(character);
+
+        // HACK: Force re-rendering to place diacritics correctly
+        CKEDITOR.currentInstance.insertText(' ');
+        CKEDITOR.currentInstance.execCommand('undo');
       }
     }
 
